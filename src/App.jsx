@@ -1,21 +1,27 @@
 import {Routes, Route, BrowserRouter} from 'react-router-dom'
+import Login from './components/Login/Login'
+import Preloader from './components/Preloader/Preloader'
+import Register from './components/Register/Register'
+import ForgotPass from './components/ForgotPass/ForgotPass'
+import VerifyPass from './components/VerifyPass/VerifyPass'
+import SelectEV from './components/SelectEV/SelectEV'
+import VehicleDetails from './components/VehicleDetails/VehicleDetails'
 import Home from './components/Home/Home'
-import Page2 from './components/Page2/Page2'
-import Page3 from './components/Page3/Page3'
-import Page4 from './components/Page4/Page4'
-import BottomNav from './components/BottomNav/BottomNav'
 
 function App() {
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/page2' element={<Page2/>} />
-        <Route path='/page3' element={<Page3/>} />
-        <Route path='/page4' element={<Page4/>} />
+        <Route path='/' element={<Preloader/>} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/login' element={<Login/>} />
+        <Route path='/register' element={<Register/>} />
+        <Route path='/forgotpass' element={<ForgotPass/>} />
+        <Route path='/verifypass' element={<VerifyPass/>} />
+        <Route path='/selectev' element={<SelectEV/>} />
+        <Route path='/vehicledetails' element={<VehicleDetails />} />
       </Routes>
-      <BottomNav/>
     </BrowserRouter>
   )
 }

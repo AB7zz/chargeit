@@ -1,99 +1,34 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-import wallpaper from './wallpaper.jpg'
-import logo from './logo.png'
-import face from './face.jpg'
-
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+import profile from '../../assets/profile.png'
+import logo2 from '../../assets/logo2.png'
+import './style.css'
+import {Link} from 'react-router-dom'
+import BottomNav from '../BottomNav/BottomNav';
+import SimpleSlider from './SimpleSlider';
 
 function Home(){
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
-
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
-
   return (
-    <>
-      <AppBar position="static">
-        <Container maxWidth="xl">
-          <Toolbar disableGutters>
-            <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-            <Typography
-              variant="h5"
-              noWrap
-              component="a"
-              href=""
-              sx={{
-                mr: 2,
-                display: { xs: 'flex', md: 'none' },
-                flexGrow: 1,
-                fontFamily: 'monospace',
-                fontWeight: 700,
-                letterSpacing: '.3rem',
-                color: 'inherit',
-                textDecoration: 'none',
-              }}
-            >
-              LOGO
-            </Typography>
+    <div className='bg-[#04103A] h-screen py-20 px-5'>
+      <div className='flex justify-between'>
+        <div className='flex'>
+          <img src={profile} alt="profile" />
+          <div className='ml-3'>
 
-            <Box sx={{ flexGrow: 0 }}>
-              <Tooltip title="Open settings">
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src={face} />
-                </IconButton>
-              </Tooltip>
-              <Menu
-                sx={{ mt: '45px' }}
-                id="menu-appbar"
-                anchorEl={anchorElUser}
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                open={Boolean(anchorElUser)}
-                onClose={handleCloseUserMenu}
-              >
-                {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box>
-          </Toolbar>
-        </Container>
-      </AppBar>
-      <img src={wallpaper} alt="wallpaper" />
-    </>
+          <p className='text-white oxygen'><span className='font-bold'>Hello</span> Michel👋</p>
+          <p className='text-white oxygen'>It's time to <span className='text-[#03A46D]'>Charge IT</span></p>
+          </div>
+        </div>
+        <img src={logo2} alt="" />
+      </div>
+      <div className='mt-10'>
+        <input className='!rounded-[60px] !px-[40px]' type="text" placeholder='Search Charging Stations' />
+        <h1 className='oxygen text-white text-lg'><span className='font-bold'>Nearby</span> Stations</h1>
+        <SimpleSlider />
+        <div className='flex mt-7'>
+          <Link to='/register' className='mt-5 text-white text-center bg-[#03A46D] px-10 rounded-[16px] py-4 m-auto'>Book Slots</Link>
+        </div>
+      </div>
+      <BottomNav />
+    </div>
   );
 }
 export default Home

@@ -9,6 +9,10 @@ import ViewInArIcon from '@mui/icons-material/ViewInAr';
 
 import { Link } from 'react-router-dom';
 
+import botNav1 from '../../assets/botNav1.svg'
+import botNav2 from '../../assets/botNav2.svg'
+import botNav3 from '../../assets/botNav3.png'
+
 export default function BottomNav() {
     const [value, setValue] = React.useState('recents');
 
@@ -17,33 +21,26 @@ export default function BottomNav() {
     };
 
     return (
-        <BottomNavigation className='bg-blue-500 h-20' sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, display: 'flex', alignItems: 'center' }} value={value} onChange={handleChange}>
+        <BottomNavigation className='bg-[#04103A] h-20 shadow-xl' sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, display: 'flex', alignItems: 'center' }} value={value} onChange={handleChange}>
             <Link to='/'>
                 <BottomNavigationAction
                     label="Home"
                     value="home"
-                    icon={<HomeIcon style={{color: 'white', transform: 'scale(1.5)'}} />}
-                />
-            </Link>
-            <Link to='/page2'>
-                <BottomNavigationAction
-                    label="Sail"
-                    value="sail"
-                    icon={<SailingIcon style={{color: 'white', transform: 'scale(1.5)'}}/>}
+                    icon={<img src={botNav1} alt="bot1" />}
                 />
             </Link>
             <Link to='page3'>
                 <BottomNavigationAction
                     label="Radar"
                     value="radar"
-                    icon={<RadarIcon style={{color: 'white', transform: 'scale(1.5)'}}/>}
+                    icon={<img src={botNav3} alt="botNav3" />}
                 />
             </Link>
-            <Link to='page4'>
+            <Link to='/page2'>
                 <BottomNavigationAction
-                    label="AR"
-                    value="ar"
-                    icon={<ViewInArIcon style={{color: 'white', transform: 'scale(1.5)'}}/>}
+                    label="Sail"
+                    value="sail"
+                    icon={<img src={botNav2} alt="bot2" />}
                 />
             </Link>
         </BottomNavigation>

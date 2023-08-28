@@ -1,0 +1,21 @@
+.oxygen{
+    font-family: 'Oxygen', sans-serif;
+}
+
+.slides{
+    overflow-x: scroll;
+}
+
+.flex::-webkit-scrollbar {
+    display: none;
+}
+
+.active{
+    width: 100%;
+    opacity: 1;
+}
+
+.nonact{
+    width: 50%;
+    opacity: 0.5;
+}

@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Jockey+One&family=Metrophobic&family=Oxanium&family=Righteous&display=swap');
+
+.flex-col h3{
+    font-family: 'Righteous', cursive;
+    font-size: 30px;
+}
+
+.flex-col p{
+    font-family: 'ABeeZee', sans-serif;
+    font-size: 20px;
+}
